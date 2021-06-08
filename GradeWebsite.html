@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+        function calculateGPA(grades){
+            let sum=0;
+            let result="X";
+            for(let i=0;i<grades.length;i++){
+                let gradeValue=0;
+                if(grades[i]=="A"){
+                    gradeValue=100;
+                }else if(grades[i]=="B"){
+                    gradeValue=80;
+                }else{
+                    gradeValue=70;
+                }
+                sum+=gradeValue;
+            }
+            //get average grade
+            averageGrade=sum/grades.length;
+            if(averageGrade>=90){
+                result="A";
+            }else if(averageGrade>=80 && averageGrade<=89){
+                result="B";
+            }else{
+                result="C";
+            }
+            //return result
+            return result;
+            alert(result);
+        }
+        let gradeArr=["A","B","B"];
+        document.write("final grade is "+calculateGPA(gradeArr));
+        </script>
+    </head>
+    <body>
+        <button type="submit" onclick="calculateGPA(gradeArr)"> Submit </button>
+    </body>
+</html>
